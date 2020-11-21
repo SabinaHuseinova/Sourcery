@@ -9,7 +9,7 @@ public typealias SourceryMethod = Method
     public var argumentLabel: String?
 
     /// Parameter internal name
-    public let name: String
+    public let name: String?
 
     /// Parameter type name
     public let typeName: TypeName
@@ -38,7 +38,7 @@ public typealias SourceryMethod = Method
     public var __parserData: Any?
 
     /// :nodoc:
-    public init(argumentLabel: String?, name: String = "", typeName: TypeName, type: Type? = nil, defaultValue: String? = nil, annotations: [String: NSObject] = [:], isInout: Bool = false) {
+    public init(argumentLabel: String?, name: String? = nil, typeName: TypeName, type: Type? = nil, defaultValue: String? = nil, annotations: [String: NSObject] = [:], isInout: Bool = false) {
         self.typeName = typeName
         self.argumentLabel = argumentLabel
         self.name = name
@@ -49,7 +49,7 @@ public typealias SourceryMethod = Method
     }
 
     /// :nodoc:
-    public init(name: String = "", typeName: TypeName, type: Type? = nil, defaultValue: String? = nil, annotations: [String: NSObject] = [:], isInout: Bool = false) {
+    public init(name: String? = nil, typeName: TypeName, type: Type? = nil, defaultValue: String? = nil, annotations: [String: NSObject] = [:], isInout: Bool = false) {
         self.typeName = typeName
         self.argumentLabel = name
         self.name = name

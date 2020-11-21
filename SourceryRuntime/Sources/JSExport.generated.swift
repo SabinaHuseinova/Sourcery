@@ -219,7 +219,7 @@ extension Method: MethodAutoJSExport {}
 
 @objc protocol MethodParameterAutoJSExport: JSExport {
     var argumentLabel: String? { get }
-    var name: String { get }
+    var name: String? { get }
     var typeName: TypeName { get }
     var `inout`: Bool { get }
     var type: Type? { get }
