@@ -1,6 +1,6 @@
 import Foundation
 import PathKit
-import xcproj
+import XcodeProj
 
 extension XcodeProj {
 
@@ -8,7 +8,7 @@ extension XcodeProj {
         return pbxproj.objects.targets(named: targetName).first?.object
     }
 
-    func fullPath<E: PBXFileElement>(fileElement: ObjectReference<E>, sourceRoot: Path) -> Path? {
+    func fullPath<E: PBXFileElement>(fileElement: E?, sourceRoot: Path) -> Path? {
         return pbxproj.objects.fullPath(fileElement: fileElement.object, reference: fileElement.reference, sourceRoot: sourceRoot)
     }
 
@@ -21,7 +21,7 @@ extension XcodeProj {
         return pbxproj.rootGroup
     }
 
-    func addGroup(named groupName: String, to toGroup: PBXGroup, options: GroupAddingOptions = []) -> ObjectReference<PBXGroup> {
+    func addGroup(named groupName: String, to toGroup: PBXGroup, options: GroupAddingOptions = []) -> PBXGroup? {
         // swiftlint:disable:next force_unwrapping
         return pbxproj.objects.addGroup(named: groupName, to: toGroup, options: options).last!
     }

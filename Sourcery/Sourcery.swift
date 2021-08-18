@@ -11,7 +11,7 @@ import SourceryRuntime
 import SourceryJS
 import SourcerySwift
 import TryCatch
-import xcproj
+import XcodeProj
 
 class Sourcery {
     public static let version: String = SourceryVersion.current.value
